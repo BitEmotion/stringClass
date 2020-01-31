@@ -6,7 +6,6 @@ int main(void)
 	class String {
 		public:
 			char m_string[MAX_ARRAY_NUM] = "";
-			char m_tempString[MAX_ARRAY_NUM] = "";
 			size_t m_length = 0;
 
 			String(const char p_paramString[MAX_ARRAY_NUM]) {
@@ -148,18 +147,23 @@ int main(void)
 				while (*p_string != '\0') {
 					 printf("%c",*p_string++); 
 				}
+				printf("\n");
 			}
+		private:
+			char m_tempString[MAX_ARRAY_NUM] = "";
 	};
 	String* string = new String("hello world");
+	string -> reverseString();
+	string -> printString();
 
 	char dest[MAX_ARRAY_NUM] = "hello";
 	char source[MAX_ARRAY_NUM] = "world";
 
 	String::concat(dest,*source);
-	printf("dest %s \n", dest);
+	printf("concat %s \n", dest);
 
 	size_t num = String::getLength(*dest);
-	printf("num %d \n", num);
+	printf("getLength %d \n", num);
 
 	char str1[MAX_ARRAY_NUM] = "abc";
 	char str2[MAX_ARRAY_NUM] = "dbc";
