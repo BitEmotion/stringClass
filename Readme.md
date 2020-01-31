@@ -1,1 +1,1 @@
-c StringClass
+c style StringClass
